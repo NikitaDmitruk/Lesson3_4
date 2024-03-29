@@ -18,6 +18,11 @@ public class TaskZero {
                 }
             }
             System.out.println("Число " + size + " простое!");
+            int[] randomNumbers = new int[size];
+            for (int i = 0; i < size; i++) {
+                randomNumbers[i] = (int) (Math.random() * 100 + 1);
+                System.out.println(randomNumbers[i]);
+            }
         } else System.out.println("Вы ввели не целое число!");
     }
 }
