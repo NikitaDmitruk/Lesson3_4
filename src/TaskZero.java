@@ -18,6 +18,14 @@ public class TaskZero {
                 }
             }
             System.out.println("Число " + size + " простое!");
+            int[] inputNumbers = new int[size];
+            System.out.println("Введите целые положительные элементы массива размерностью " + size + ":");
+            if (scanner.hasNextInt()) {
+                for (int i = 0; i < inputNumbers.length; i++) {
+                    inputNumbers[i] = scanner.nextInt();
+                    System.out.println(inputNumbers[i]);
+                }
+            }
         } else System.out.println("Вы ввели не целое число!");
     }
 }
