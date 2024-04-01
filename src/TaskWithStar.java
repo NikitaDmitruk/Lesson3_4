@@ -33,6 +33,9 @@ public class TaskWithStar {
                 if ((randomNumbers[randomNumbers.length - i - 1] + 1) % 10 == 0) {
                     count = count + 1;
                 }
+                else {
+                    break;
+                }
             }
             int[] placeNumber = new int[count];
             int sizeNew = 0;
@@ -41,7 +44,6 @@ public class TaskWithStar {
                 while (dec != 1) {
                     dec = dec / 10;
                     if (dec == 0) {
-                        count = 0;
                         break;
                     }
                     placeNumber[placeNumber.length - 1 - i] = placeNumber[placeNumber.length - 1 - i] + 1;
