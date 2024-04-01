@@ -40,6 +40,10 @@ public class TaskWithStar {
                 int dec = (randomNumbers[randomNumbers.length - i - 1] + 1);
                 while (dec != 1) {
                     dec = dec / 10;
+                    if (dec == 0) {
+                        count = 0;
+                        break;
+                    }
                     placeNumber[placeNumber.length - 1 - i] = placeNumber[placeNumber.length - 1 - i] + 1;
                 }
             }
@@ -53,6 +57,11 @@ public class TaskWithStar {
                     biggerRandomNumbers[i] = 0;
                 }
                 for (int line : biggerRandomNumbers) {
+                    System.out.println(line);
+                }
+            } else if (count == 0) {
+                randomNumbers[randomNumbers.length - 1] = randomNumbers[randomNumbers.length - 1] + 1;
+                for (int line:randomNumbers) {
                     System.out.println(line);
                 }
             } else {
