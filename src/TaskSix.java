@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TaskFive {
+public class TaskSix {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите простое целое число для задания размера массива: ");
@@ -19,21 +19,22 @@ public class TaskFive {
             }
             System.out.println("Число " + size + " простое!");
             int[] randomNumbers = new int[size];
-            for (int i = 0; i < size; i++) {
-                randomNumbers[i] = (int) (Math.random() * 100 + 1);
+            System.out.println("Введите целые элементы массива размерностью " + size + ":");
+            for (int i = 0; i < randomNumbers.length; i++) {
+                if (scanner.hasNextInt()) {
+                    randomNumbers[i] = scanner.nextInt();
+                } else {
+                    System.out.println("Вы ввели не целое число!");
+                    return;
+                }
             }
-            for (int line : randomNumbers) {
-                System.out.print(line + " ");
+            for (int i = 0; i < randomNumbers.length - 1; i++) {
+                if (randomNumbers[i] >= randomNumbers[i + 1]) {
+                    System.out.println("Массив не является возрастающей последовательностью!");
+                    return;
+                }
             }
-            System.out.println();
-            for (int i = 0; i < randomNumbers.length / 2; i++) {
-                int buffer = randomNumbers[i];
-                randomNumbers[i] = randomNumbers[randomNumbers.length - i - 1];
-                randomNumbers[randomNumbers.length - i - 1] = buffer;
-            }
-            for (int line : randomNumbers) {
-                System.out.print(line + " ");
-            }
+            System.out.println("Массив является возрастающей последовательностью!");
         } else System.out.println("Вы ввели не целое число!");
     }
 }
